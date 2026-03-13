@@ -2,23 +2,25 @@ package org.nit.springaiapp.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.ai.openai.OpenAiChatModel;
+import org.springframework.ai.ollama.OllamaChatModel;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class OpenAIController {
+public class OllamaController {
     private ChatClient chatClient;
 
 
-    public OpenAIController(OpenAiChatModel chatModel) {
+    public OllamaController(OllamaChatModel chatModel) {
         this.chatClient = ChatClient.create(chatModel);
     }
-//    ChatMemory chatMemory = MessageWindowChatMemory.builder().build();
-//
-//    public OpenAIController(ChatClient.Builder builder) {
+
+
+    // ChatMemory chatMemory = MessageWindowChatMemory.builder().build();
+
+//    public OllamaController(ChatClient.Builder builder) {
 //        this.chatClient = builder
 //                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory)
 //                        .build())
